@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laiba Sumaiya Nazim • Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config={theme:{extend:{colors:{'baby-pink':'#FEEBF6','pink-accent':'#F4B8E4','pink-border':'#E498CD','lavender-soft':'#EBE4FF','lavender-dark':'#C6B5F0','soft-white':'#FFFDFE','cozy-brown':'#524354','cozy-brown-light':'#847187','sage-accent':'#C5E8D8','sparkle-gold':'#F7D678'},fontFamily:{pixel:['"Press Start 2P"','monospace'],terminal:['"VT323"','monospace'],sans:['"Plus Jakarta Sans"','sans-serif']}}}}
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+<canvas id="pixieCanvas"></canvas>
+
+<nav class="sticky top-0 z-40 bg-soft-white/90 backdrop-blur-md border-b border-pink-border/50">
+  <div class="max-w-5xl mx-auto px-4 md:px-8 py-2.5 flex items-center gap-3">
+    <a href="#top" class="flex items-center gap-2 shrink-0">
+      <span class="w-6 h-6 bg-pink-accent border border-cozy-brown flex items-center justify-center text-[10px] rounded-md shadow-[1.5px_1.5px_0_#524354]">✨</span>
+      <span id="logoText" class="font-pixel text-xs text-cozy-brown"></span>
+    </a>
+    <div class="nav-scroll flex-1 flex items-center gap-2 overflow-x-auto font-pixel text-[10px] py-1 pl-1">
+      <button onclick="toggleAbout()" class="pixel-btn-sm !bg-pink-accent font-bold">🌸 ABOUT ME</button>
+      <a href="#projects" class="pixel-btn-sm">projects</a>
+      <a href="#experience" class="pixel-btn-sm">journal</a>
+      <a href="#education" class="pixel-btn-sm">education</a>
+      <a href="#certificates" class="pixel-btn-sm">certificates</a>
+      <a href="#contact" class="pixel-btn-sm">contact</a>
+    </div>
+    <button id="musicBtn" onclick="toggleMusic()" class="pixel-btn-sm shrink-0 !bg-lavender-soft font-pixel" aria-pressed="false">
+      <span id="musicIcon">🎵</span><span id="musicText">music on</span>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <!-- HERO (no contact info here) -->
+  <section id="hero" class="max-w-5xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-7 space-y-6 order-2 md:order-1">
+        <div class="inline-flex items-center gap-2 bg-soft-white border border-pink-border px-3 py-1 rounded-full shadow-[2px_2px_0_#C6B5F0] text-[11px] font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse border border-cozy-brown"></span><span id="heroStatus"></span>
+        </div>
+        <div>
+          <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Hi, I'm <span id="heroName" class="text-pink-border underline decoration-lavender-dark decoration-wavy decoration-2"></span> 🌸</h1>
+          <p id="heroSub" class="font-pixel text-[10px] sm:text-xs text-cozy-brown-light mt-4 leading-relaxed"></p>
+        </div>
+        <div class="bg-soft-white border-2 border-pink-border p-5 rounded-2xl shadow-[4px_4px_0_#C6B5F0]">
+          <p id="heroTag" class="font-terminal text-2xl tracking-wide"></p>
+          <p id="heroIntro" class="text-xs text-cozy-brown-light mt-2 leading-relaxed"></p>
+        </div>
+        <button onclick="toggleAbout()" class="about-btn-special font-pixel text-xs px-5 py-3 inline-flex items-center gap-2.5"><span class="text-base">🎀</span><span>EXPLORE LAIBA</span></button>
+      </div>
+      <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+        <div class="pixel-card p-3 w-full max-w-[280px] animate-float">
+          <div class="bg-lavender-soft border border-cozy-brown px-3 py-1 rounded-t-lg flex justify-between items-center text-[10px] font-pixel mb-2"><span>laiba.jpg</span>
+            <span class="flex gap-1.5"><i class="w-2 h-2 rounded-full bg-pink-accent border border-cozy-brown"></i><i class="w-2 h-2 rounded-full bg-sparkle-gold border border-cozy-brown"></i><i class="w-2 h-2 rounded-full bg-sage-accent border border-cozy-brown"></i></span></div>
+          <img id="heroImg" alt="Laiba" class="w-full aspect-square object-cover rounded-b-lg border border-pink-border">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-5xl mx-auto px-5 md:px-8 py-12"></section>
+  <section id="experience" class="max-w-5xl mx-auto px-5 md:px-8 py-12"></section>
+  <section id="education" class="max-w-5xl mx-auto px-5 md:px-8 py-12"></section>
+  <section id="certificates" class="max-w-5xl mx-auto px-5 md:px-8 py-12"></section>
+  <section id="contact" class="max-w-5xl mx-auto px-5 md:px-8 py-12 pb-20"></section>
+</main>
+
+<footer class="text-center font-pixel text-[9px] text-cozy-brown-light pb-8">made with 🌸 by laiba</footer>
+
+<!-- About modal -->
+<div id="aboutModal" class="modal-overlay hidden-modal fixed inset-0 z-50 bg-cozy-brown/40 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target===this)toggleAbout()">
+  <div class="modal-content pixel-card bg-soft-white w-full max-w-xl p-5 sm:p-8 max-h-[90vh] overflow-y-auto">
+    <div class="flex justify-between items-start gap-3 border-b-2 border-pink-border pb-4 mb-5">
+      <div class="flex items-center gap-2"><span class="text-2xl">🌷</span><div><h2 id="abName" class="font-pixel text-xs sm:text-sm"></h2><span id="abTitle" class="text-[10px] font-pixel text-pink-border leading-relaxed block mt-1"></span></div></div>
+      <button onclick="toggleAbout()" class="pixel-btn-sm !bg-baby-pink font-pixel shrink-0">✕ CLOSE</button>
+    </div>
+    <div id="abBody" class="space-y-4 text-xs leading-relaxed text-cozy-brown-light"></div>
+  </div>
+</div>
+
+<!-- Certificate lightbox -->
+<div id="lightbox" class="modal-overlay hidden-modal fixed inset-0 z-50 bg-cozy-brown/70 flex items-center justify-center p-4" onclick="this.classList.add('hidden-modal')">
+  <img id="lightboxImg" class="modal-content max-w-full max-h-[85vh] rounded-xl border-4 border-soft-white" alt="">
+</div>
+
+<audio id="bgm" src="audio/music.mp3" loop preload="none"></audio>
+
+<!-- Data files: edit these, one per section -->
+<script src="data/profile.js"></script>
+<script src="data/projects.js"></script>
+<script src="data/experience.js"></script>
+<script src="data/education.js"></script>
+<script src="data/certificates.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
