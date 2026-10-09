@@ -2,7 +2,7 @@
 window.PROFILE = {
   name: "Laiba Sumaiya Nazim",
   logoText: "laiba",
-  status: "ONLINE • FlyRank AI Intern",
+  status: "ONLINE",
   subtitle: "Information & Communication Engineering Student @ BUP",
   tagline: "Building things, breaking things, learning things.",
   intro: "Software engineering & web development enthusiast exploring full-stack engineering, machine learning, and networking.",
